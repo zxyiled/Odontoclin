@@ -1,7 +1,12 @@
 package org.odontoclin.logic;
 
+import jakarta.persistence.*;
+
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_user;
     private String username;
     private String password;
