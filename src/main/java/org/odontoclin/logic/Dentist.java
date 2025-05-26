@@ -1,10 +1,11 @@
 package org.odontoclin.logic;
 
+import java.io.Serializable;
 import java.util.List;
 import jakarta.persistence.*;
 
 @Entity
-public class Dentist extends Person{
+public class Dentist extends Person implements Serializable {
 
     //private int id_dentist;
     private String specialty;

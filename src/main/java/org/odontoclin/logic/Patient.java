@@ -1,10 +1,11 @@
 package org.odontoclin.logic;
 
+import java.io.Serializable;
 import java.util.List;
 import jakarta.persistence.*;
 
 @Entity
-public class Patient extends Person{
+public class Patient extends Person implements Serializable {
 
     //private int id_patient;
     private boolean has_SW;

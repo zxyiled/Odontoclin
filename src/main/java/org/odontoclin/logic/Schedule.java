@@ -1,9 +1,10 @@
 package org.odontoclin.logic;
 
 import jakarta.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Schedule {
+public class Schedule implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

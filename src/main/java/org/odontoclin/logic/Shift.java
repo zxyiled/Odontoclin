@@ -1,10 +1,11 @@
 package org.odontoclin.logic;
 
+import java.io.Serializable;
 import java.util.Date;
 import jakarta.persistence.*;
 
 @Entity
-public class Shift {
+public class Shift implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

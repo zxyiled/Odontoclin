@@ -2,9 +2,11 @@ package org.odontoclin.logic;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Person {
+public class Person implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
