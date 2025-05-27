@@ -1,4 +1,4 @@
-package org.odontoclin;
+package org.odontoclin.servlets;
 
 import java.io.*;
 
