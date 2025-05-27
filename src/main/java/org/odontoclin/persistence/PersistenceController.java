@@ -1,6 +1,11 @@
 package org.odontoclin.persistence;
 
 import org.odontoclin.logic.User;
+import org.odontoclin.persistence.exceptions.NonexistentEntityException;
+
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class PersistenceController {
 
@@ -28,5 +33,32 @@ public class PersistenceController {
     public void createUser(User user) {
 
         userJpa.create(user);
+    }
+
+    public List<User> getUsers() {
+
+        return userJpa.findUserEntities();
+    }
+
+    public void deleteUser(int id) {
+        try {
+            userJpa.destroy(id);
+        } catch (NonexistentEntityException e) {
+            Logger.getLogger(PersistenceController.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }
+
+    public User bringUser(int id) {
+
+        return userJpa.findUser(id);
+    }
+
+    public void editUser(User user) {
+
+        try {
+            userJpa.edit(user);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

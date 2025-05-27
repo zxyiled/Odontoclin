@@ -19,4 +19,37 @@ public class Controller {
         persisController.createUser(user);
     }
 
+    public List<User> getUsers() {
+
+        return persisController.getUsers();
+
+    }
+
+    public void deleteUser(int id) {
+        persisController.deleteUser(id);
+    }
+
+    public User bringUser(int id) {
+
+        return persisController.bringUser(id);
+    }
+
+
+    public void editUser(User user) {
+
+        persisController.editUser(user);
+    }
+
+    public boolean checkLogin(String username, String password) {
+        List <User> userList = persisController.bringUser();
+
+        boolean isValid = false;
+        for (User u : userList) {
+            if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
+                isValid = true;
+                break;
+            }
+        }
+        return isValid;
+    }
 }

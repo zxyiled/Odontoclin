@@ -2,6 +2,16 @@
 
 <body id="page-top">
 
+<!-- Validación Sesión -->
+    <% HttpSession session = request.getSession();
+            String user = (String) request.getSession().getAttribute("user");
+
+            if(user==null) {
+                response.sendRedirect("sinLogin.jsp");
+            }
+
+        %>
+
 <!-- Page Wrapper -->
 <div id="wrapper">
 

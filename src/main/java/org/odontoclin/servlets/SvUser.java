@@ -6,6 +6,8 @@ import java.io.*;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import org.odontoclin.logic.User;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "SvUser", value = "/SvUser")
@@ -16,10 +18,18 @@ public class SvUser extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        response.setContentType("text/html;charset=UTF-8");
+
     }
 
     @Override
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
+        List<User> userList = controller.getUsers();
+        HttpSession session = request.getSession();
+        session.setAttribute("userList", userList);
+
+        response.sendRedirect("viewUser.jsp");
 
     }
 
