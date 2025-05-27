@@ -1,5 +1,6 @@
 package org.odontoclin.servlets;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.odontoclin.logic.Controller;
 import java.io.*;
 import jakarta.servlet.*;
@@ -29,7 +30,9 @@ public class SvUser extends HttpServlet {
         String password = request.getParameter("password");
         String role = request.getParameter("role");
 
-        controller.createUser(username, password, role);
+        String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+
+        controller.createUser(username, hashedPassword, role);
 
         response.sendRedirect("index.jsp");
     }
