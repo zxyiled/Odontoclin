@@ -9,10 +9,14 @@ public class Controller {
 
     PersistenceController persisController = new PersistenceController();
 
-    public void createUser(int id, String username, String password, String role) {
+    public void createUser(String username, String password, String role) {
 
-        User user = new User(id, username, password, role);
-        persisController.userJpa.createUser(user);
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        user.setRole(role);
+
+        persisController.createUser(user);
     }
 
 }

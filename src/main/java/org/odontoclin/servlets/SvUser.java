@@ -1,28 +1,41 @@
 package org.odontoclin.servlets;
 
+import org.odontoclin.logic.Controller;
 import java.io.*;
-
+import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import java.util.List;
 
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
-public class HelloServlet extends HttpServlet {
-    private String message;
+@WebServlet(name = "SvUser", value = "/SvUser")
+public class SvUser extends HttpServlet {
 
-    public void init() {
-        message = "Hello World!";
+    Controller controller = new Controller();
+
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
     }
 
+    @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
 
-        // Hello
-        PrintWriter out = response.getWriter();
-        out.println("<html><body>");
-        out.println("<h1>" + message + "</h1>");
-        out.println("</body></html>");
     }
 
-    public void destroy() {
+    @Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String role = request.getParameter("role");
+
+        controller.createUser(username, password, role);
+
+        response.sendRedirect("index.jsp");
+    }
+
+    @Override
+    public String getServletInfo() {
+        return "Short description";
     }
 }

@@ -5,22 +5,22 @@
 <h1>Register User</h1>
 <p>Here we can register users</p>
 
-<form class="user">
+<form class="user" action="SvUser" method="POST">
 
   <div class="form-group col">
 
     <div class="col-sm-6 mb-3">
-      <input type="text" class="form-control form-control-user" id="username"
+      <input type="text" class="form-control form-control-user" id="username" name="username"
              placeholder="Username">
     </div>
 
     <div class="col-sm-6 mb-3">
-      <input type="password" class="form-control form-control-user" id="password"
+      <input type="password" class="form-control form-control-user" id="password" name="password"
              placeholder="Password">
     </div>
 
     <div class="col-sm-6 mb-3">
-      <input type="text" class="form-control form-control-user" id="rol"
+      <input type="text" class="form-control form-control-user" id="role" name="role"
              placeholder="Role">
     </div>
 

@@ -9,37 +9,37 @@
 
     <div class="form-group col">
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="dni"
+            <input type="text" class="form-control form-control-user" id="dni" name="dni"
                    placeholder="DNI">
         </div>
 
         <div class="col-sm-6 mb-3">
-            <input type="text" class="form-control form-control-user" id="name"
+            <input type="text" class="form-control form-control-user" id="name" name="name"
                    placeholder="Name">
         </div>
 
     <div class="col-sm-6 mb-3">
-        <input type="text" class="form-control form-control-user" id="lastName"
+        <input type="text" class="form-control form-control-user" id="lastName" name="lastName"
                placeholder="Last Name">
     </div>
 
     <div class="col-sm-6 mb-3">
-        <input type="text" class="form-control form-control-user" id="address"
+        <input type="text" class="form-control form-control-user" id="address" name="address"
                placeholder="Address">
     </div>
 
     <div class="col-sm-6 mb-3">
-        <input type="text" class="form-control form-control-user" id="phone"
+        <input type="text" class="form-control form-control-user" id="phone" name="phone"
                placeholder="Phone">
     </div>
 
     <div class="col-sm-6 mb-3">
-        <input type="text" class="form-control form-control-user" id="dateOfBirth"
+        <input type="text" class="form-control form-control-user" id="dateOfBirth" name="dateOfBirth"
                placeholder="Date of Birth">
     </div>
 
     <div class="col-sm-6 mb-3">
-        <input type="text" class="form-control form-control-user" id="specialty"
+        <input type="text" class="form-control form-control-user" id="specialty" name="specialty"
                placeholder="Specialty">
     </div>
     </div>
